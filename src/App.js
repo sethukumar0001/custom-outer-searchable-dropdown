@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import CustomSearchableDropdown from "./CustomDropdown";
+import { getValue } from "./lodash";
 
-function App() {
+function App(props) {
+  const [value, setValue] = useState("");
+  const handleSelectChange = (value) => {
+    setValue(getValue(value, `id`, ""));
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="home">
+      <CustomSearchableDropdown
+        label={"label"}
+        value={value}
+        onChange={handleSelectChange}
+        add
+      />
     </div>
   );
 }
