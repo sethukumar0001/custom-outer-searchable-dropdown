@@ -300,7 +300,7 @@ const CustomSearchableDropdown = (props) => {
                   : query
               }
               name="searchTerm"
-              autoComplete="none"
+              autoComplete="off"
               placeholder={getValue(
                 props,
                 `placeholder`,
